@@ -1,0 +1,80 @@
+{
+    "objects": [
+        {
+            "type": "platform",
+            "x": 1093,
+            "y": 618,
+            "width": 1456,
+            "height": 190,
+            "rotation": 0
+        },
+        {
+            "type": "enemy",
+            "x": 1518,
+            "y": 473,
+            "width": 67,
+            "height": 67,
+            "rotation": 0
+        },
+        {
+            "type": "player_start",
+            "x": 508,
+            "y": 469,
+            "width": 66,
+            "height": 66,
+            "rotation": 0
+        },
+        {
+            "type": "spikes",
+            "x": 960,
+            "y": 460,
+            "width": 88,
+            "height": 88,
+            "rotation": 0
+        },
+        {
+            "type": "platform",
+            "x": 776,
+            "y": 435,
+            "width": 170,
+            "height": 69,
+            "rotation": 0
+        },
+        {
+            "type": "finish",
+            "x": 1693,
+            "y": 429,
+            "width": 69,
+            "height": 69,
+            "rotation": 0
+        },
+        {
+            "type": "spikes",
+            "x": 1273,
+            "y": 443,
+            "width": 137,
+            "height": 151,
+            "rotation": 0
+        },
+        {
+            "type": "coin",
+            "x": 1148,
+            "y": 347,
+            "width": 70,
+            "height": 54,
+            "rotation": 0
+        },
+        {
+            "type": "platform",
+            "x": 822,
+            "y": 345,
+            "width": 240,
+            "height": 61,
+            "rotation": 0
+        }
+    ],
+    "level_size": {
+        "w": 2048,
+        "h": 870
+    }
+}
