@@ -29,7 +29,7 @@
             "width": 572,
             "height": 159,
             "rotation": 0.0,
-            "debug_info": "neutral, v=4, circ=0.46"
+            "debug_info": "neutral, v=4, circ=0.38"
         },
         {
             "type": "spikes",
@@ -45,7 +45,7 @@
             "x": 753,
             "y": 387,
             "width": 50,
-            "height": 57,
+            "height": 56,
             "rotation": 0.0,
             "debug_info": "neutral, v=3, circ=0.50"
         },
@@ -56,6 +56,7 @@
             "width": 55,
             "height": 60,
             "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.59"
             "debug_info": "neutral, v=4, circ=0.59"
         },
         {
