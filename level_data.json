@@ -1,143 +1,152 @@
 {
     "level_size": {
-        "w": 1242,
-        "h": 880
+        "w": 1174,
+        "h": 879
     },
     "objects": [
         {
             "type": "box",
-            "x": 134,
-            "y": 748,
+            "x": 135,
+            "y": 750,
             "width": 241,
-            "height": 235,
+            "height": 234,
             "rotation": 0.0,
             "debug_info": "neutral, v=4, circ=0.70"
         },
         {
             "type": "player_start",
-            "x": 140,
-            "y": 573,
-            "width": 91,
-            "height": 85,
+            "x": 142,
+            "y": 576,
+            "width": 93,
+            "height": 81,
             "rotation": 0.0,
-            "debug_info": "green, v=7, circ=0.81"
+            "debug_info": "green, v=7, circ=0.89"
         },
         {
             "type": "platform",
             "x": 592,
-            "y": 485,
-            "width": 571,
-            "height": 160,
+            "y": 487,
+            "width": 572,
+            "height": 159,
             "rotation": 0.0,
             "debug_info": "neutral, v=4, circ=0.46"
         },
         {
             "type": "spikes",
-            "x": 512,
-            "y": 387,
-            "width": 48,
-            "height": 55,
+            "x": 515,
+            "y": 388,
+            "width": 52,
+            "height": 54,
             "rotation": 0.0,
-            "debug_info": "neutral, v=5, circ=0.28"
+            "debug_info": "neutral, v=5, circ=0.44"
         },
         {
             "type": "spikes",
-            "x": 752,
-            "y": 386,
+            "x": 753,
+            "y": 387,
             "width": 50,
             "height": 57,
             "rotation": 0.0,
-            "debug_info": "neutral, v=4, circ=0.48"
+            "debug_info": "neutral, v=3, circ=0.50"
         },
         {
             "type": "spikes",
-            "x": 400,
-            "y": 380,
-            "width": 56,
-            "height": 62,
-            "rotation": 0.0,
-            "debug_info": "neutral, v=4, circ=0.57"
-        },
-        {
-            "type": "enemy",
-            "x": 638,
-            "y": 339,
-            "width": 40,
-            "height": 35,
-            "rotation": 0.0,
-            "debug_info": "red, v=6, circ=0.78"
-        },
-        {
-            "type": "spikes",
-            "x": 273,
-            "y": 320,
-            "width": 64,
-            "height": 49,
-            "rotation": 0.0,
-            "debug_info": "neutral, v=3, circ=0.57"
-        },
-        {
-            "type": "platform",
-            "x": 844,
-            "y": 292,
-            "width": 247,
-            "height": 91,
+            "x": 401,
+            "y": 381,
+            "width": 55,
+            "height": 60,
             "rotation": 0.0,
             "debug_info": "neutral, v=4, circ=0.59"
         },
         {
-            "type": "platform",
-            "x": 1096,
-            "y": 365,
-            "width": 116,
-            "height": 263,
+            "type": "enemy",
+            "x": 640,
+            "y": 340,
+            "width": 41,
+            "height": 34,
             "rotation": 0.0,
-            "debug_info": "yellow, v=4, circ=0.58"
+            "debug_info": "red, v=6, circ=0.82"
         },
         {
             "type": "spikes",
-            "x": 800,
-            "y": 220,
+            "x": 275,
+            "y": 321,
+            "width": 64,
+            "height": 48,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.61"
+        },
+        {
+            "type": "platform",
+            "x": 845,
+            "y": 293,
+            "width": 246,
+            "height": 93,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.58"
+        },
+        {
+            "type": "platform",
+            "x": 1099,
+            "y": 365,
+            "width": 114,
+            "height": 264,
+            "rotation": 0.0,
+            "debug_info": "green, v=4, circ=0.59"
+        },
+        {
+            "type": "spikes",
+            "x": 801,
+            "y": 221,
             "width": 55,
             "height": 56,
             "rotation": 0.0,
-            "debug_info": "neutral, v=3, circ=0.58"
+            "debug_info": "neutral, v=3, circ=0.57"
         },
         {
             "type": "coin",
-            "x": 471,
-            "y": 219,
-            "width": 87,
-            "height": 70,
+            "x": 469,
+            "y": 225,
+            "width": 97,
+            "height": 89,
             "rotation": 0.0,
             "debug_info": "yellow, v=8, circ=0.04"
         },
         {
             "type": "platform",
-            "x": 1061,
-            "y": 145,
-            "width": 208,
-            "height": 73,
+            "x": 257,
+            "y": 147,
+            "width": 77,
+            "height": 63,
+            "rotation": 55.437477111816406,
+            "debug_info": "yellow, v=4, circ=0.48"
+        },
+        {
+            "type": "platform",
+            "x": 1062,
+            "y": 146,
+            "width": 209,
+            "height": 72,
             "rotation": 0.0,
-            "debug_info": "neutral, v=5, circ=0.47"
+            "debug_info": "neutral, v=5, circ=0.46"
         },
         {
             "type": "finish",
-            "x": 1115,
-            "y": 97,
+            "x": 1118,
+            "y": 98,
             "width": 48,
             "height": 34,
             "rotation": 0.0,
-            "debug_info": "blue, v=6, circ=0.80"
+            "debug_info": "blue, v=6, circ=0.83"
         },
         {
             "type": "spikes",
-            "x": 990,
-            "y": 85,
+            "x": 992,
+            "y": 87,
             "width": 47,
-            "height": 43,
+            "height": 42,
             "rotation": 0.0,
-            "debug_info": "neutral, v=3, circ=0.53"
+            "debug_info": "neutral, v=3, circ=0.54"
         }
     ]
 }
