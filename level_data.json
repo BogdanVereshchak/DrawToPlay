@@ -1,80 +1,125 @@
 {
+    "level_size": {
+        "w": 1242,
+        "h": 880
+    },
     "objects": [
         {
-            "type": "platform",
-            "x": 1093,
-            "y": 618,
-            "width": 1456,
-            "height": 190,
-            "rotation": 0
-        },
-        {
-            "type": "enemy",
-            "x": 1518,
-            "y": 473,
-            "width": 67,
-            "height": 67,
-            "rotation": 0
+            "type": "box",
+            "x": 134,
+            "y": 748,
+            "width": 241,
+            "height": 235,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.70"
         },
         {
             "type": "player_start",
-            "x": 508,
-            "y": 469,
-            "width": 66,
-            "height": 66,
-            "rotation": 0
-        },
-        {
-            "type": "spikes",
-            "x": 960,
-            "y": 460,
-            "width": 88,
-            "height": 88,
-            "rotation": 0
+            "x": 140,
+            "y": 573,
+            "width": 91,
+            "height": 85,
+            "rotation": 0.0,
+            "debug_info": "green, v=7, circ=0.81"
         },
         {
             "type": "platform",
-            "x": 776,
-            "y": 435,
-            "width": 170,
-            "height": 69,
-            "rotation": 0
-        },
-        {
-            "type": "finish",
-            "x": 1693,
-            "y": 429,
-            "width": 69,
-            "height": 69,
-            "rotation": 0
+            "x": 592,
+            "y": 485,
+            "width": 571,
+            "height": 160,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.46"
         },
         {
             "type": "spikes",
-            "x": 1273,
-            "y": 443,
-            "width": 137,
-            "height": 151,
-            "rotation": 0
+            "x": 512,
+            "y": 387,
+            "width": 48,
+            "height": 55,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=5, circ=0.28"
         },
         {
-            "type": "coin",
-            "x": 1148,
-            "y": 347,
-            "width": 70,
-            "height": 54,
-            "rotation": 0
+            "type": "spikes",
+            "x": 752,
+            "y": 386,
+            "width": 50,
+            "height": 57,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.48"
+        },
+        {
+            "type": "spikes",
+            "x": 400,
+            "y": 380,
+            "width": 56,
+            "height": 62,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.57"
+        },
+        {
+            "type": "rock",
+            "x": 638,
+            "y": 339,
+            "width": 40,
+            "height": 35,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=6, circ=0.78"
+        },
+        {
+            "type": "spikes",
+            "x": 273,
+            "y": 320,
+            "width": 64,
+            "height": 49,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.57"
         },
         {
             "type": "platform",
-            "x": 822,
-            "y": 345,
-            "width": 240,
-            "height": 61,
-            "rotation": 0
+            "x": 844,
+            "y": 292,
+            "width": 247,
+            "height": 91,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.59"
+        },
+        {
+            "type": "spikes",
+            "x": 800,
+            "y": 220,
+            "width": 55,
+            "height": 56,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.58"
+        },
+        {
+            "type": "platform",
+            "x": 1061,
+            "y": 145,
+            "width": 208,
+            "height": 73,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=5, circ=0.47"
+        },
+        {
+            "type": "rock",
+            "x": 1115,
+            "y": 97,
+            "width": 48,
+            "height": 34,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=6, circ=0.80"
+        },
+        {
+            "type": "spikes",
+            "x": 990,
+            "y": 85,
+            "width": 47,
+            "height": 43,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.53"
         }
-    ],
-    "level_size": {
-        "w": 2048,
-        "h": 870
-    }
+    ]
 }
