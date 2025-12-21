@@ -36,8 +36,7 @@ def get_smart_color(roi_hsv, mask):
     if s < 30: return "neutral" # Чорний, сірий або білий
     
     if h < 10 or h > 120: return "red"
-    if 10 <= h < 25: return "orange"
-    if 25 <= h < 35: return "yellow"
+    if 10 <= h < 35: return "yellow"
     if 35 <= h < 85: return "green"
     if 85 <= h < 125: return "blue"
     
@@ -136,7 +135,7 @@ def scan_level_image(image_path, output_json_path):
 
         # ВИПРАВЛЕННЯ: Більш м'яка перевірка на коло для монет
         # Якщо об'єкт жовтий, ми допускаємо кривішу форму (circularity > 0.5 замість 0.75)
-        is_yellow_blob = (color_name == "yellow" and circularity > 0.5)
+        is_yellow_blob = (color_name == "yellow" and circularity < 0.1)
         is_geometric_circle = (circularity > 0.7)
         
         # 1. Спочатку перевіряємо на коло
@@ -213,6 +212,7 @@ def scan_level_image(image_path, output_json_path):
     
     # Показати результат (зменшений)
     cv2.imshow("Smart Scan Result", debug_img)
+    cv2.imshow("Mask (Threshold)", thresh)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 

@@ -59,13 +59,13 @@
             "debug_info": "neutral, v=4, circ=0.57"
         },
         {
-            "type": "rock",
+            "type": "enemy",
             "x": 638,
             "y": 339,
             "width": 40,
             "height": 35,
             "rotation": 0.0,
-            "debug_info": "neutral, v=6, circ=0.78"
+            "debug_info": "red, v=6, circ=0.78"
         },
         {
             "type": "spikes",
@@ -95,6 +95,15 @@
             "debug_info": "neutral, v=3, circ=0.58"
         },
         {
+            "type": "coin",
+            "x": 471,
+            "y": 219,
+            "width": 87,
+            "height": 70,
+            "rotation": 0.0,
+            "debug_info": "yellow, v=8, circ=0.04"
+        },
+        {
             "type": "platform",
             "x": 1061,
             "y": 145,
@@ -104,13 +113,13 @@
             "debug_info": "neutral, v=5, circ=0.47"
         },
         {
-            "type": "rock",
+            "type": "finish",
             "x": 1115,
             "y": 97,
             "width": 48,
             "height": 34,
             "rotation": 0.0,
-            "debug_info": "neutral, v=6, circ=0.80"
+            "debug_info": "blue, v=6, circ=0.80"
         },
         {
             "type": "spikes",
