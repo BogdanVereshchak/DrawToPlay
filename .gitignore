@@ -140,9 +140,3 @@ dmypy.json
 .idea/
 *.swp
 *.swo
-
-# Project specific
-*.png
-*.jpg
-*.jpeg
-level_data.json

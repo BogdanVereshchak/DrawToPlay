@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c24h40u34840c"]
+[gd_scene load_steps=8 format=3 uid="uid://c24h40u34840c"]
 
 [ext_resource type="Script" uid="uid://bb48se7o7hjau" path="res://LevelBuilder.gd" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://c661dtjs3g2gd" path="res://Prefabs/Platform.tscn" id="2_r0du0"]
-[ext_resource type="PackedScene" uid="uid://d23ae6hdidv4n" path="res://Prefabs/test.tscn" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://b28hw3qfrqewb" path="res://Prefabs/Spike.tscn" id="3_fos0i"]
 [ext_resource type="PackedScene" uid="uid://bm06bdm5537ym" path="res://Prefabs/Enemy.tscn" id="4_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://07ketu5yw5qg" path="res://Prefabs/Coin.tscn" id="5_3dxm6"]
@@ -17,7 +16,7 @@ enemy_scene = ExtResource("4_3dxm6")
 coin_scene = ExtResource("5_3dxm6")
 player_scene = ExtResource("6_lgr22")
 finish_scene = ExtResource("7_trn2v")
-box_scene = ExtResource("2_uu6xs")
+box_scene = ExtResource("2_r0du0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)

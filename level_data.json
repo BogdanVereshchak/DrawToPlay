@@ -86,6 +86,15 @@
             "debug_info": "neutral, v=4, circ=0.59"
         },
         {
+            "type": "platform",
+            "x": 1096,
+            "y": 365,
+            "width": 116,
+            "height": 263,
+            "rotation": 0.0,
+            "debug_info": "yellow, v=4, circ=0.58"
+        },
+        {
             "type": "spikes",
             "x": 800,
             "y": 220,
