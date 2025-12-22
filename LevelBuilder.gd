@@ -64,16 +64,28 @@ func spawn_object(obj_data):
 		"platform":
 			instance = platform_scene.instantiate()
 			_resize_platform_collider(instance, w, h)
-		"enemy": instance = enemy_scene.instantiate()
-		"coin": instance = coin_scene.instantiate()
-		"player_start": instance = player_scene.instantiate()
-		"finish": instance = finish_scene.instantiate()
-		"spikes": instance = spike_scene.instantiate()
-		"box": instance = box_scene.instantiate()
+		"enemy": 
+			instance = enemy_scene.instantiate()
+			_resize_platform_collider(instance, w, h)
+		"coin": 
+			instance = coin_scene.instantiate()
+			_resize_platform_collider(instance, w, h)
+		"player_start": 
+			instance = player_scene.instantiate()
+			_resize_platform_collider(instance, w, h)
+		"finish": 
+			instance = finish_scene.instantiate()
+			_resize_platform_collider(instance, w, h)
+		"spikes": 
+			instance = spike_scene.instantiate()
+			_resize_platform_collider(instance, w, h)
+		"box": 
+			instance = box_scene.instantiate()
+			_resize_platform_collider(instance, w, h)
 		
 	if instance:
 		instance.position = Vector2(x, y)
-		instance.rotation_degrees = rot
+		instance.rotation_degrees = -rot
 		
 		if containers.has(type):
 			containers[type].add_child(instance)
@@ -81,5 +93,5 @@ func spawn_object(obj_data):
 			add_child(instance)
 
 func _resize_platform_collider(platform_instance, w, h):
-	var base_size = 64.0 
+	var base_size = 32.0
 	platform_instance.scale = Vector2(w / base_size, h / base_size)

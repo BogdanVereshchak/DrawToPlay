@@ -5,7 +5,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Control/Panel/Label.text = str(GameStats.score) + " score"
 	if GameStats.is_finished:
 		$Control/Label.visible = true

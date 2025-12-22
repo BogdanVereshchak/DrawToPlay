@@ -1,152 +1,179 @@
 {
-	"level_size": {
-		"w": 1174,
-		"h": 879
-	},
-	"objects": [
-		{
-			"type": "box",
-			"x": 135,
-			"y": 750,
-			"width": 241,
-			"height": 234,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=4, circ=0.70"
-		},
-		{
-			"type": "player_start",
-			"x": 142,
-			"y": 576,
-			"width": 93,
-			"height": 81,
-			"rotation": 0.0,
-			"debug_info": "green, v=7, circ=0.89"
-		},
-		{
-			"type": "platform",
-			"x": 592,
-			"y": 487,
-			"width": 572,
-			"height": 159,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=4, circ=0.38"
-		},
-		{
-			"type": "spikes",
-			"x": 515,
-			"y": 388,
-			"width": 52,
-			"height": 54,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=5, circ=0.44"
-		},
-		{
-			"type": "spikes",
-			"x": 753,
-			"y": 387,
-			"width": 50,
-			"height": 56,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=3, circ=0.50"
-		},
-		{
-			"type": "spikes",
-			"x": 401,
-			"y": 381,
-			"width": 55,
-			"height": 60,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=4, circ=0.59"
-		},
-		{
-			"type": "enemy",
-			"x": 640,
-			"y": 340,
-			"width": 41,
-			"height": 34,
-			"rotation": 0.0,
-			"debug_info": "red, v=6, circ=0.82"
-		},
-		{
-			"type": "spikes",
-			"x": 275,
-			"y": 321,
-			"width": 64,
-			"height": 48,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=3, circ=0.61"
-		},
-		{
-			"type": "platform",
-			"x": 845,
-			"y": 293,
-			"width": 246,
-			"height": 93,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=4, circ=0.58"
-		},
-		{
-			"type": "platform",
-			"x": 1099,
-			"y": 365,
-			"width": 114,
-			"height": 264,
-			"rotation": 0.0,
-			"debug_info": "green, v=4, circ=0.59"
-		},
-		{
-			"type": "spikes",
-			"x": 801,
-			"y": 221,
-			"width": 55,
-			"height": 56,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=3, circ=0.57"
-		},
-		{
-			"type": "coin",
-			"x": 469,
-			"y": 225,
-			"width": 97,
-			"height": 89,
-			"rotation": 0.0,
-			"debug_info": "yellow, v=8, circ=0.04"
-		},
-		{
-			"type": "platform",
-			"x": 257,
-			"y": 147,
-			"width": 77,
-			"height": 63,
-			"rotation": 55.437477111816406,
-			"debug_info": "yellow, v=4, circ=0.48"
-		},
-		{
-			"type": "platform",
-			"x": 1062,
-			"y": 146,
-			"width": 209,
-			"height": 72,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=5, circ=0.46"
-		},
-		{
-			"type": "finish",
-			"x": 1118,
-			"y": 98,
-			"width": 48,
-			"height": 34,
-			"rotation": 0.0,
-			"debug_info": "blue, v=6, circ=0.83"
-		},
-		{
-			"type": "spikes",
-			"x": 992,
-			"y": 87,
-			"width": 47,
-			"height": 42,
-			"rotation": 0.0,
-			"debug_info": "neutral, v=3, circ=0.54"
-		}
-	]
+    "level_size": {
+        "w": 1174,
+        "h": 879
+    },
+    "objects": [
+        {
+            "type": "box",
+            "x": 135,
+            "y": 750,
+            "width": 241,
+            "height": 234,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.70"
+        },
+        {
+            "type": "player_start",
+            "x": 135,
+            "y": 578,
+            "width": 30,
+            "height": 26,
+            "rotation": 0.0,
+            "debug_info": "green, v=6, circ=0.85"
+        },
+        {
+            "type": "spikes",
+            "x": 228,
+            "y": 571,
+            "width": 60,
+            "height": 82,
+            "rotation": 0.0,
+            "debug_info": "yellow, v=3, circ=0.60"
+        },
+        {
+            "type": "platform",
+            "x": 592,
+            "y": 487,
+            "width": 572,
+            "height": 159,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.46"
+        },
+        {
+            "type": "spikes",
+            "x": 515,
+            "y": 388,
+            "width": 52,
+            "height": 54,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=5, circ=0.44"
+        },
+        {
+            "type": "spikes",
+            "x": 753,
+            "y": 387,
+            "width": 50,
+            "height": 57,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.50"
+        },
+        {
+            "type": "spikes",
+            "x": 401,
+            "y": 381,
+            "width": 55,
+            "height": 60,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.59"
+        },
+        {
+            "type": "enemy",
+            "x": 640,
+            "y": 340,
+            "width": 41,
+            "height": 34,
+            "rotation": 0.0,
+            "debug_info": "red, v=6, circ=0.82"
+        },
+        {
+            "type": "spikes",
+            "x": 275,
+            "y": 321,
+            "width": 64,
+            "height": 48,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.61"
+        },
+        {
+            "type": "platform",
+            "x": 845,
+            "y": 293,
+            "width": 246,
+            "height": 93,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=4, circ=0.58"
+        },
+        {
+            "type": "platform",
+            "x": 1099,
+            "y": 365,
+            "width": 114,
+            "height": 264,
+            "rotation": 0.0,
+            "debug_info": "green, v=4, circ=0.59"
+        },
+        {
+            "type": "spikes",
+            "x": 801,
+            "y": 221,
+            "width": 55,
+            "height": 56,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.57"
+        },
+        {
+            "type": "spikes",
+            "x": 916,
+            "y": 210,
+            "width": 66,
+            "height": 60,
+            "rotation": 0.0,
+            "debug_info": "yellow, v=3, circ=0.68"
+        },
+        {
+            "type": "coin",
+            "x": 469,
+            "y": 224,
+            "width": 97,
+            "height": 88,
+            "rotation": 0.0,
+            "debug_info": "yellow, v=8, circ=0.04"
+        },
+        {
+            "type": "spikes",
+            "x": 644,
+            "y": 177,
+            "width": 68,
+            "height": 64,
+            "rotation": 0.0,
+            "debug_info": "yellow, v=3, circ=0.60"
+        },
+        {
+            "type": "platform",
+            "x": 257,
+            "y": 147,
+            "width": 77,
+            "height": 63,
+            "rotation": 55.437477111816406,
+            "debug_info": "yellow, v=4, circ=0.48"
+        },
+        {
+            "type": "platform",
+            "x": 1062,
+            "y": 146,
+            "width": 209,
+            "height": 72,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=5, circ=0.46"
+        },
+        {
+            "type": "finish",
+            "x": 1118,
+            "y": 98,
+            "width": 48,
+            "height": 34,
+            "rotation": 0.0,
+            "debug_info": "blue, v=6, circ=0.83"
+        },
+        {
+            "type": "spikes",
+            "x": 992,
+            "y": 87,
+            "width": 47,
+            "height": 42,
+            "rotation": 0.0,
+            "debug_info": "neutral, v=3, circ=0.54"
+        }
+    ]
 }

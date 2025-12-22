@@ -59,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 self_modulate = Color(0.79553187, 0.51004714, 0.2670814, 0.28235295)
@@ -72,6 +73,7 @@ grow_horizontal = 0
 tooltip_text = "
 
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
@@ -84,6 +86,7 @@ text = "	1234576 Score"
 label_settings = SubResource("LabelSettings_trn2v")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 visible = false
@@ -106,4 +109,6 @@ script = ExtResource("9_03owx")
 position = Vector2(1003, -159)
 shape = SubResource("RectangleShape2D_trn2v")
 
+[connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="Finish/Area2D" to="Finish/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
