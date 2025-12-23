@@ -1,293 +1,293 @@
 {
-    "level_size": {
-        "w": 1174,
-        "h": 879
-    },
-    "objects": [
-        {
-            "type": "enemy",
-            "x": 641,
-            "y": 342,
-            "width": 39,
-            "height": 38,
-            "rotation": 0.0,
-            "debug_rect": [
-                529,
-                275,
-                34,
-                33
-            ],
-            "debug_info": "red, v=6, circ=0.81"
-        },
-        {
-            "type": "coin",
-            "x": 470,
-            "y": 221,
-            "width": 86,
-            "height": 77,
-            "rotation": 0.0,
-            "debug_rect": [
-                364,
-                156,
-                74,
-                66
-            ],
-            "debug_info": "yellow, v=8, circ=0.05"
-        },
-        {
-            "type": "player_start",
-            "x": 135,
-            "y": 578,
-            "width": 29,
-            "height": 24,
-            "rotation": 0.0,
-            "debug_rect": [
-                103,
-                482,
-                25,
-                21
-            ],
-            "debug_info": "green, v=7, circ=0.86"
-        },
-        {
-            "type": "finish",
-            "x": 1117,
-            "y": 97,
-            "width": 45,
-            "height": 30,
-            "rotation": 0.0,
-            "debug_rect": [
-                932,
-                70,
-                39,
-                26
-            ],
-            "debug_info": "blue, v=7, circ=0.75"
-        },
-        {
-            "type": "box",
-            "x": 136,
-            "y": 750,
-            "width": 240,
-            "height": 233,
-            "rotation": 0.0,
-            "debug_rect": [
-                14,
-                540,
-                205,
-                199
-            ],
-            "debug_info": "neutral, v=4, circ=0.70"
-        },
-        {
-            "type": "spikes",
-            "x": 229,
-            "y": 572,
-            "width": 59,
-            "height": 81,
-            "rotation": 0.0,
-            "debug_rect": [
-                170,
-                453,
-                51,
-                69
-            ],
-            "debug_info": "neutral, v=3, circ=0.57"
-        },
-        {
-            "type": "platform",
-            "x": 593,
-            "y": 487,
-            "width": 571,
-            "height": 158,
-            "rotation": 0.0,
-            "debug_rect": [
-                262,
-                348,
-                487,
-                135
-            ],
-            "debug_info": "neutral, v=4, circ=0.46"
-        },
-        {
-            "type": "spikes",
-            "x": 516,
-            "y": 389,
-            "width": 51,
-            "height": 52,
-            "rotation": 0.0,
-            "debug_rect": [
-                418,
-                309,
-                44,
-                45
-            ],
-            "debug_info": "neutral, v=5, circ=0.43"
-        },
-        {
-            "type": "spikes",
-            "x": 753,
-            "y": 388,
-            "width": 49,
-            "height": 55,
-            "rotation": 0.0,
-            "debug_rect": [
-                621,
-                307,
-                42,
-                47
-            ],
-            "debug_info": "neutral, v=4, circ=0.47"
-        },
-        {
-            "type": "spikes",
-            "x": 402,
-            "y": 382,
-            "width": 54,
-            "height": 61,
-            "rotation": 0.0,
-            "debug_rect": [
-                320,
-                300,
-                46,
-                52
-            ],
-            "debug_info": "neutral, v=4, circ=0.57"
-        },
-        {
-            "type": "spikes",
-            "x": 275,
-            "y": 322,
-            "width": 63,
-            "height": 48,
-            "rotation": 0.0,
-            "debug_rect": [
-                208,
-                254,
-                54,
-                41
-            ],
-            "debug_info": "neutral, v=3, circ=0.61"
-        },
-        {
-            "type": "platform",
-            "x": 845,
-            "y": 294,
-            "width": 246,
-            "height": 92,
-            "rotation": 0.0,
-            "debug_rect": [
-                615,
-                211,
-                210,
-                79
-            ],
-            "debug_info": "neutral, v=4, circ=0.59"
-        },
-        {
-            "type": "platform",
-            "x": 1100,
-            "y": 366,
-            "width": 112,
-            "height": 262,
-            "rotation": 0.0,
-            "debug_rect": [
-                889,
-                200,
-                96,
-                224
-            ],
-            "debug_info": "neutral, v=4, circ=0.58"
-        },
-        {
-            "type": "spikes",
-            "x": 802,
-            "y": 222,
-            "width": 55,
-            "height": 55,
-            "rotation": 0.0,
-            "debug_rect": [
-                660,
-                166,
-                47,
-                47
-            ],
-            "debug_info": "neutral, v=3, circ=0.57"
-        },
-        {
-            "type": "spikes",
-            "x": 917,
-            "y": 211,
-            "width": 66,
-            "height": 58,
-            "rotation": 0.0,
-            "debug_rect": [
-                753,
-                155,
-                57,
-                50
-            ],
-            "debug_info": "neutral, v=3, circ=0.66"
-        },
-        {
-            "type": "spikes",
-            "x": 645,
-            "y": 178,
-            "width": 66,
-            "height": 63,
-            "rotation": 0.0,
-            "debug_rect": [
-                521,
-                125,
-                57,
-                54
-            ],
-            "debug_info": "neutral, v=3, circ=0.59"
-        },
-        {
-            "type": "platform",
-            "x": 258,
-            "y": 148,
-            "width": 77,
-            "height": 62,
-            "rotation": 0.0,
-            "debug_rect": [
-                187,
-                100,
-                66,
-                53
-            ],
-            "debug_info": "neutral, v=6, circ=0.44"
-        },
-        {
-            "type": "platform",
-            "x": 1063,
-            "y": 147,
-            "width": 206,
-            "height": 73,
-            "rotation": 0.0,
-            "debug_rect": [
-                818,
-                94,
-                176,
-                63
-            ],
-            "debug_info": "neutral, v=5, circ=0.46"
-        },
-        {
-            "type": "spikes",
-            "x": 993,
-            "y": 88,
-            "width": 45,
-            "height": 43,
-            "rotation": 0.0,
-            "debug_rect": [
-                827,
-                57,
-                39,
-                37
-            ],
-            "debug_info": "neutral, v=3, circ=0.51"
-        }
-    ]
+	"level_size": {
+		"w": 1174,
+		"h": 879
+	},
+	"objects": [
+		{
+			"type": "enemy",
+			"x": 641,
+			"y": 342,
+			"width": 39,
+			"height": 38,
+			"rotation": 0.0,
+			"debug_rect": [
+				529,
+				275,
+				34,
+				33
+			],
+			"debug_info": "red, v=6, circ=0.81"
+		},
+		{
+			"type": "coin",
+			"x": 470,
+			"y": 221,
+			"width": 86,
+			"height": 77,
+			"rotation": 0.0,
+			"debug_rect": [
+				364,
+				156,
+				74,
+				66
+			],
+			"debug_info": "yellow, v=8, circ=0.05"
+		},
+		{
+			"type": "player_start",
+			"x": 135,
+			"y": 578,
+			"width": 29,
+			"height": 24,
+			"rotation": 0.0,
+			"debug_rect": [
+				103,
+				482,
+				25,
+				21
+			],
+			"debug_info": "green, v=7, circ=0.86"
+		},
+		{
+			"type": "finish",
+			"x": 1117,
+			"y": 97,
+			"width": 45,
+			"height": 30,
+			"rotation": 0.0,
+			"debug_rect": [
+				932,
+				70,
+				39,
+				26
+			],
+			"debug_info": "blue, v=7, circ=0.75"
+		},
+		{
+			"type": "box",
+			"x": 136,
+			"y": 750,
+			"width": 240,
+			"height": 233,
+			"rotation": 0.0,
+			"debug_rect": [
+				14,
+				540,
+				205,
+				199
+			],
+			"debug_info": "neutral, v=4, circ=0.70"
+		},
+		{
+			"type": "spikes",
+			"x": 229,
+			"y": 572,
+			"width": 59,
+			"height": 81,
+			"rotation": 0.0,
+			"debug_rect": [
+				170,
+				453,
+				51,
+				69
+			],
+			"debug_info": "neutral, v=3, circ=0.57"
+		},
+		{
+			"type": "platform",
+			"x": 593,
+			"y": 487,
+			"width": 571,
+			"height": 158,
+			"rotation": 0.0,
+			"debug_rect": [
+				262,
+				348,
+				487,
+				135
+			],
+			"debug_info": "neutral, v=4, circ=0.46"
+		},
+		{
+			"type": "spikes",
+			"x": 516,
+			"y": 389,
+			"width": 51,
+			"height": 52,
+			"rotation": 0.0,
+			"debug_rect": [
+				418,
+				309,
+				44,
+				45
+			],
+			"debug_info": "neutral, v=5, circ=0.43"
+		},
+		{
+			"type": "spikes",
+			"x": 753,
+			"y": 388,
+			"width": 49,
+			"height": 55,
+			"rotation": 0.0,
+			"debug_rect": [
+				621,
+				307,
+				42,
+				47
+			],
+			"debug_info": "neutral, v=4, circ=0.47"
+		},
+		{
+			"type": "spikes",
+			"x": 402,
+			"y": 382,
+			"width": 54,
+			"height": 61,
+			"rotation": 0.0,
+			"debug_rect": [
+				320,
+				300,
+				46,
+				52
+			],
+			"debug_info": "neutral, v=4, circ=0.57"
+		},
+		{
+			"type": "spikes",
+			"x": 275,
+			"y": 322,
+			"width": 63,
+			"height": 48,
+			"rotation": 0.0,
+			"debug_rect": [
+				208,
+				254,
+				54,
+				41
+			],
+			"debug_info": "neutral, v=3, circ=0.61"
+		},
+		{
+			"type": "platform",
+			"x": 845,
+			"y": 294,
+			"width": 246,
+			"height": 92,
+			"rotation": 0.0,
+			"debug_rect": [
+				615,
+				211,
+				210,
+				79
+			],
+			"debug_info": "neutral, v=4, circ=0.59"
+		},
+		{
+			"type": "platform",
+			"x": 1100,
+			"y": 366,
+			"width": 112,
+			"height": 262,
+			"rotation": 0.0,
+			"debug_rect": [
+				889,
+				200,
+				96,
+				224
+			],
+			"debug_info": "neutral, v=4, circ=0.58"
+		},
+		{
+			"type": "spikes",
+			"x": 802,
+			"y": 222,
+			"width": 55,
+			"height": 55,
+			"rotation": 0.0,
+			"debug_rect": [
+				660,
+				166,
+				47,
+				47
+			],
+			"debug_info": "neutral, v=3, circ=0.57"
+		},
+		{
+			"type": "spikes",
+			"x": 917,
+			"y": 211,
+			"width": 66,
+			"height": 58,
+			"rotation": 0.0,
+			"debug_rect": [
+				753,
+				155,
+				57,
+				50
+			],
+			"debug_info": "neutral, v=3, circ=0.66"
+		},
+		{
+			"type": "spikes",
+			"x": 645,
+			"y": 178,
+			"width": 66,
+			"height": 63,
+			"rotation": 0.0,
+			"debug_rect": [
+				521,
+				125,
+				57,
+				54
+			],
+			"debug_info": "neutral, v=3, circ=0.59"
+		},
+		{
+			"type": "platform",
+			"x": 258,
+			"y": 148,
+			"width": 77,
+			"height": 62,
+			"rotation": 0.0,
+			"debug_rect": [
+				187,
+				100,
+				66,
+				53
+			],
+			"debug_info": "neutral, v=6, circ=0.44"
+		},
+		{
+			"type": "platform",
+			"x": 1063,
+			"y": 147,
+			"width": 206,
+			"height": 73,
+			"rotation": 0.0,
+			"debug_rect": [
+				818,
+				94,
+				176,
+				63
+			],
+			"debug_info": "neutral, v=5, circ=0.46"
+		},
+		{
+			"type": "spikes",
+			"x": 993,
+			"y": 88,
+			"width": 45,
+			"height": 43,
+			"rotation": 0.0,
+			"debug_rect": [
+				827,
+				57,
+				39,
+				37
+			],
+			"debug_info": "neutral, v=3, circ=0.51"
+		}
+	]
 }
