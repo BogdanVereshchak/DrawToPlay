@@ -1,7 +1,7 @@
 @tool
 extends Node2D
 
-const LEVEL_DATA_PATH = "res://level_data.json"
+var level_data_path = ""
 
 @export var platform_scene: PackedScene
 @export var spike_scene: PackedScene
@@ -23,14 +23,23 @@ const LEVEL_DATA_PATH = "res://level_data.json"
 }
 
 func _ready():
+	# Отримуємо шлях до папки, де лежить EXE файл гри
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	
+	# Якщо ми в редакторі, шлях трохи інший (res://), але для EXE це важливо
+	if OS.has_feature("editor"):
+		level_data_path = ProjectSettings.globalize_path("res://level_data.json")
+	else:
+		# У збірці шукаємо файл поруч з EXE
+		level_data_path = exe_dir + "/level_data.json"
 	load_level()
 
 func load_level():
-	if not FileAccess.file_exists(LEVEL_DATA_PATH):
+	if not FileAccess.file_exists(level_data_path):
 		print("Помилка: Файл рівня не знайдено.")
 		return
 
-	var file = FileAccess.open(LEVEL_DATA_PATH, FileAccess.READ)
+	var file = FileAccess.open(level_data_path, FileAccess.READ)
 	var json = JSON.new()
 	var error = json.parse(file.get_as_text())
 	
