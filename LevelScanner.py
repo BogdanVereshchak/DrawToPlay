@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageDraw, ImageFilter
 import cv2
 import numpy as np
 import json
@@ -172,68 +172,270 @@ def process_contour(cnt, color_name, scale_factor):
         "debug_info": f"{color_name}, v={vertices}, circ={circularity:.2f}"
     }
 
+class ModernButton(tk.Canvas):
+    """Custom modern button with gradient and hover effects"""
+    def __init__(self, parent, text, command, bg_color="#3498db", hover_color="#2980b9", 
+                 text_color="white", width=200, height=50, icon="", state="normal"):
+        super().__init__(parent, width=width, height=height, bg=parent['bg'], 
+                        highlightthickness=0, cursor="hand2" if state == "normal" else "arrow")
+        
+        self.command = command
+        self.bg_color = bg_color
+        self.hover_color = hover_color
+        self.text_color = text_color
+        self.text = text
+        self.icon = icon
+        self.width = width
+        self.height = height
+        self.is_hovered = False
+        self.state = state
+        
+        self.draw_button()
+        
+        if state == "normal":
+            self.bind("<Enter>", self.on_enter)
+            self.bind("<Leave>", self.on_leave)
+            self.bind("<Button-1>", self.on_click)
+    
+    def draw_button(self):
+        self.delete("all")
+        
+        # Determine color based on state
+        if self.state == "disabled":
+            color = "#7f8c8d"
+        elif self.is_hovered:
+            color = self.hover_color
+        else:
+            color = self.bg_color
+        
+        # Draw rounded rectangle with shadow
+        radius = 10
+        shadow_offset = 3
+        
+        # Shadow
+        if self.state == "normal":
+            self.create_rounded_rect(shadow_offset, shadow_offset, 
+                                    self.width, self.height, 
+                                    radius, fill="#1a1a1a", outline="")
+        
+        # Main button
+        self.create_rounded_rect(0, 0, self.width - shadow_offset, 
+                                self.height - shadow_offset, 
+                                radius, fill=color, outline="")
+        
+        # Text
+        full_text = f"{self.icon} {self.text}" if self.icon else self.text
+        text_color = "#bdc3c7" if self.state == "disabled" else self.text_color
+        self.create_text(self.width // 2, self.height // 2, 
+                        text=full_text, fill=text_color, 
+                        font=("Segoe UI", 11, "bold"))
+    
+    def create_rounded_rect(self, x1, y1, x2, y2, radius, **kwargs):
+        points = [
+            x1 + radius, y1,
+            x2 - radius, y1,
+            x2, y1,
+            x2, y1 + radius,
+            x2, y2 - radius,
+            x2, y2,
+            x2 - radius, y2,
+            x1 + radius, y2,
+            x1, y2,
+            x1, y2 - radius,
+            x1, y1 + radius,
+            x1, y1
+        ]
+        return self.create_polygon(points, smooth=True, **kwargs)
+    
+    def on_enter(self, event):
+        if self.state == "normal":
+            self.is_hovered = True
+            self.draw_button()
+    
+    def on_leave(self, event):
+        self.is_hovered = False
+        self.draw_button()
+    
+    def on_click(self, event):
+        if self.state == "normal" and self.command:
+            self.command()
+    
+    def config_state(self, state):
+        self.state = state
+        self.config(cursor="hand2" if state == "normal" else "arrow")
+        if state == "normal":
+            self.bind("<Enter>", self.on_enter)
+            self.bind("<Leave>", self.on_leave)
+            self.bind("<Button-1>", self.on_click)
+        else:
+            self.unbind("<Enter>")
+            self.unbind("<Leave>")
+            self.unbind("<Button-1>")
+        self.draw_button()
+
 class LevelMakerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Draw-to-Game Scanner")
-        self.root.geometry("900x650")
-        self.root.configure(bg="#2c3e50")
+        self.root.geometry("1100x700")
+        
+        # Modern gradient background
+        self.root.configure(bg="#1a1a2e")
 
         self.file_path = None
         self.scan_success = False
 
-        # Стилі
-        style = ttk.Style()
-        style.theme_use('clam')
-        style.configure("TButton", padding=10, font=("Helvetica", 12))
-        style.configure("TLabel", background="#2c3e50", foreground="white", font=("Helvetica", 10))
+        # Create main container with gradient effect
+        self.main_container = tk.Frame(root, bg="#1a1a2e")
+        self.main_container.pack(fill="both", expand=True, padx=10, pady=10)
 
-        # Ліва панель
-        self.left_frame = tk.Frame(root, bg="#34495e", width=250)
-        self.left_frame.pack(side="left", fill="y")
+        # Ліва панель з градієнтом
+        self.left_frame = tk.Frame(self.main_container, bg="#16213e", width=280)
+        self.left_frame.pack(side="left", fill="y", padx=(0, 10))
         self.left_frame.pack_propagate(False)
 
-        # Логотип/Заголовок
-        lbl_title = tk.Label(self.left_frame, text="LEVEL MAKER", font=("Impact", 20), bg="#34495e", fg="#e74c3c")
-        lbl_title.pack(pady=20)
+        # Add decorative top bar
+        top_bar = tk.Frame(self.left_frame, bg="#0f3460", height=5)
+        top_bar.pack(fill="x")
 
-        # Кнопка Вибрати фото
-        self.btn_select = ttk.Button(self.left_frame, text="📂 1. Обрати фото", command=self.select_image)
-        self.btn_select.pack(pady=10, padx=20, fill="x")
-
-        # Кнопка Сканувати
-        self.btn_scan = ttk.Button(self.left_frame, text="🧠 2. Аналізувати", command=self.start_scan, state="disabled")
-        self.btn_scan.pack(pady=10, padx=20, fill="x")
-
-        # Кнопка Грати
-        self.btn_play = ttk.Button(self.left_frame, text="🎮 3. Грати!", command=self.run_game, state="disabled")
-        self.btn_play.pack(pady=10, padx=20, fill="x")
-
-        # Інструкція
-        lbl_info = tk.Label(self.left_frame, text="Інструкція:\nЧорний - Платформи\nЧервоний - Вороги\nЖовтий - Монети\nЗелений - Старт\nСиній - Фініш", 
-                           bg="#34495e", fg="#bdc3c7", justify="left")
-        lbl_info.pack(pady=30, padx=20, anchor="w")
+        # Логотип/Заголовок з тінню
+        title_frame = tk.Frame(self.left_frame, bg="#16213e")
+        title_frame.pack(pady=25)
         
-        # Лог
-        self.log_text = tk.Text(self.left_frame, height=10, bg="#2c3e50", fg="#2ecc71", font=("Consolas", 8), relief="flat")
-        self.log_text.pack(side="bottom", fill="x", padx=5, pady=5)
-        self.log_text.insert("end", "Очікування...\n")
+        lbl_title = tk.Label(title_frame, text="🎮 LEVEL MAKER", 
+                            font=("Segoe UI", 24, "bold"), 
+                            bg="#16213e", fg="#e94560")
+        lbl_title.pack()
+        
+        lbl_subtitle = tk.Label(title_frame, text="Draw • Scan • Play", 
+                               font=("Segoe UI", 10, "italic"), 
+                               bg="#16213e", fg="#a8dadc")
+        lbl_subtitle.pack()
 
-        # Права панель
-        self.right_frame = tk.Frame(root, bg="#2c3e50")
+        # Separator line
+        separator1 = tk.Frame(self.left_frame, bg="#0f3460", height=2)
+        separator1.pack(fill="x", padx=20, pady=15)
+
+        # Buttons container
+        btn_container = tk.Frame(self.left_frame, bg="#16213e")
+        btn_container.pack(pady=10, padx=20, fill="x")
+
+        # Custom styled buttons
+        self.btn_select = ModernButton(btn_container, "Обрати фото", 
+                                       self.select_image, 
+                                       bg_color="#3498db", 
+                                       hover_color="#2980b9",
+                                       icon="📂", width=240, height=55)
+        self.btn_select.pack(pady=8)
+
+        self.btn_scan = ModernButton(btn_container, "Аналізувати", 
+                                     self.start_scan, 
+                                     bg_color="#2ecc71", 
+                                     hover_color="#27ae60",
+                                     icon="🧠", width=240, height=55, state="disabled")
+        self.btn_scan.pack(pady=8)
+
+        self.btn_play = ModernButton(btn_container, "Грати!", 
+                                     self.run_game, 
+                                     bg_color="#e74c3c", 
+                                     hover_color="#c0392b",
+                                     icon="🎮", width=240, height=55, state="disabled")
+        self.btn_play.pack(pady=8)
+
+        # Separator line
+        separator2 = tk.Frame(self.left_frame, bg="#0f3460", height=2)
+        separator2.pack(fill="x", padx=20, pady=15)
+
+        # Інструкція з іконками
+        info_frame = tk.Frame(self.left_frame, bg="#16213e")
+        info_frame.pack(pady=10, padx=20, fill="x")
+        
+        lbl_info_title = tk.Label(info_frame, text="📋 Інструкція:", 
+                                 font=("Segoe UI", 11, "bold"), 
+                                 bg="#16213e", fg="#f1f1f1")
+        lbl_info_title.pack(anchor="w", pady=(0, 10))
+        
+        instructions = [
+            ("⬛", "Чорний", "Платформи"),
+            ("🔴", "Червоний", "Вороги"),
+            ("🟡", "Жовтий", "Монети"),
+            ("🟢", "Зелений", "Старт"),
+            ("🔵", "Синій", "Фініш"),
+            ("🔺", "Трикутник", "Шипи")
+        ]
+        
+        for icon, color, desc in instructions:
+            item_frame = tk.Frame(info_frame, bg="#16213e")
+            item_frame.pack(anchor="w", pady=2)
+            
+            tk.Label(item_frame, text=icon, bg="#16213e", fg="white", 
+                    font=("Segoe UI", 10)).pack(side="left", padx=(0, 5))
+            tk.Label(item_frame, text=f"{color}:", bg="#16213e", 
+                    fg="#a8dadc", font=("Segoe UI", 9, "bold")).pack(side="left")
+            tk.Label(item_frame, text=desc, bg="#16213e", 
+                    fg="#bdc3c7", font=("Segoe UI", 9)).pack(side="left", padx=(5, 0))
+        
+        # Лог з рамкою
+        log_frame = tk.Frame(self.left_frame, bg="#0f3460")
+        log_frame.pack(side="bottom", fill="x", padx=10, pady=10)
+        
+        log_title = tk.Label(log_frame, text="📊 Лог подій", 
+                            font=("Segoe UI", 9, "bold"), 
+                            bg="#0f3460", fg="#a8dadc")
+        log_title.pack(anchor="w", padx=5, pady=(5, 2))
+        
+        self.log_text = tk.Text(log_frame, height=8, bg="#0d1b2a", 
+                               fg="#2ecc71", font=("Consolas", 9), 
+                               relief="flat", padx=10, pady=5,
+                               insertbackground="#2ecc71")
+        self.log_text.pack(fill="x", padx=5, pady=(0, 5))
+        self.log_text.insert("end", "✓ Система готова до роботи...\n")
+
+        # Права панель з рамками
+        self.right_frame = tk.Frame(self.main_container, bg="#1a1a2e")
         self.right_frame.pack(side="right", fill="both", expand=True)
 
-        self.preview_frame = tk.Frame(self.right_frame, bg="#2c3e50")
+        # Title for preview area
+        preview_title = tk.Label(self.right_frame, text="🖼️ Попередній перегляд", 
+                                font=("Segoe UI", 14, "bold"), 
+                                bg="#1a1a2e", fg="#f1f1f1")
+        preview_title.pack(pady=(0, 10))
+
+        self.preview_frame = tk.Frame(self.right_frame, bg="#1a1a2e")
         self.preview_frame.pack(expand=True, fill="both")
 
-        self.lbl_image = tk.Label(self.preview_frame, text="Result", bg="#2c3e50", fg="white")
-        self.lbl_image.pack(side="left", expand=True, padx=10)
+        # Result preview with border
+        result_container = tk.Frame(self.preview_frame, bg="#0f3460", padx=2, pady=2)
+        result_container.pack(side="left", expand=True, fill="both", padx=5)
+        
+        result_label = tk.Label(result_container, text="Результат", 
+                               font=("Segoe UI", 10, "bold"), 
+                               bg="#0f3460", fg="#a8dadc")
+        result_label.pack(pady=5)
+        
+        self.lbl_image = tk.Label(result_container, text="Оберіть зображення\nдля початку роботи", 
+                                 bg="#0d1b2a", fg="#7f8c8d",
+                                 font=("Segoe UI", 12), 
+                                 width=40, height=20)
+        self.lbl_image.pack(expand=True, fill="both", padx=5, pady=(0, 5))
 
-        self.lbl_mask = tk.Label(self.preview_frame, text="Mask", bg="#2c3e50", fg="white")
-        self.lbl_mask.pack(side="right", expand=True, padx=10)
+        # Mask preview with border
+        mask_container = tk.Frame(self.preview_frame, bg="#0f3460", padx=2, pady=2)
+        mask_container.pack(side="right", expand=True, fill="both", padx=5)
+        
+        mask_label = tk.Label(mask_container, text="Маска", 
+                             font=("Segoe UI", 10, "bold"), 
+                             bg="#0f3460", fg="#a8dadc")
+        mask_label.pack(pady=5)
+        
+        self.lbl_mask = tk.Label(mask_container, text="Маска з'явиться\nпісля аналізу", 
+                                bg="#0d1b2a", fg="#7f8c8d",
+                                font=("Segoe UI", 12), 
+                                width=40, height=20)
+        self.lbl_mask.pack(expand=True, fill="both", padx=5, pady=(0, 5))
 
     def log(self, message):
-        self.log_text.insert("end", message + "\n")
+        self.log_text.insert("end", f"• {message}\n")
         self.log_text.see("end")
         self.root.update_idletasks()
 
@@ -242,8 +444,8 @@ class LevelMakerApp:
         if path:
             self.file_path = path
             self.show_preview(path)
-            self.btn_scan.config(state="normal")
-            self.btn_play.config(state="disabled")
+            self.btn_scan.config_state("normal")
+            self.btn_play.config_state("disabled")
             self.log(f"Обрано: {os.path.basename(path)}")
 
     def show_preview(self, path):
@@ -265,7 +467,7 @@ class LevelMakerApp:
         
         if success:
             self.scan_success = True
-            self.root.after(0, lambda: self.btn_play.config(state="normal"))
+            self.root.after(0, lambda: self.btn_play.config_state("normal"))
             rgb_img = cv2.cvtColor(processed_img_cv, cv2.COLOR_BGR2RGB)
             pil_img = Image.fromarray(rgb_img)
             pil_img.thumbnail((600, 500))
@@ -277,9 +479,9 @@ class LevelMakerApp:
 
             self.tk_img_mask = ImageTk.PhotoImage(mask_pil)
             self.root.after(0, lambda: self.lbl_mask.config(image=self.tk_img_mask))
-            self.root.after(0, lambda: messagebox.showinfo("Готово", "Рівень згенеровано! Тисни 'Грати'."))
+            self.root.after(0, lambda: messagebox.showinfo("✓ Готово", "Рівень успішно згенеровано!\n\nТисни 'Грати' для запуску гри."))
         else:
-            self.root.after(0, lambda: messagebox.showerror("Помилка", "Не вдалося обробити."))
+            self.root.after(0, lambda: messagebox.showerror("✗ Помилка", "Не вдалося обробити зображення.\n\nПеревірте формат файлу."))
 
     def run_game(self):
         game_exe = "Game.exe" 
@@ -289,7 +491,7 @@ class LevelMakerApp:
             self.log(f"Запуск {game_exe}...")
             subprocess.Popen([game_path])
         else:
-            messagebox.showerror("Помилка", f"Не знайдено файл гри: {game_exe}\nПереконайтеся, що він лежить в одній папці з лаунчером.")
+            messagebox.showerror("✗ Помилка", f"Не знайдено файл гри: {game_exe}\n\nПереконайтеся, що він лежить в одній папці з лаунчером.")
             self.log(f"Файл не знайдено: {game_path}")
 
 if __name__ == "__main__":
